@@ -1,0 +1,23 @@
+//- partials/_project-card.pug
+mixin project-card(title, description, category, imageUrl, technologies, contributors)
+  .project-card(data-category=category)
+    .project-card__image-container
+      img.project-card__image(src=imageUrl, alt="Preview of " + title)
+      .project-card__category-badge= category
+    
+    .project-card__content
+      h3.project-card__title= title
+      p.project-card__description= description
+      
+      .project-card__technologies
+        each tech in technologies
+          span.project-card__tech-badge= tech
+      
+      .project-card__footer
+        .project-card__contributors
+          each contributor in contributors
+            span.project-card__contributor= contributor
+        
+        a.project-card__link(href="#")
+          i.project-card__icon.icon-code
+          | Code

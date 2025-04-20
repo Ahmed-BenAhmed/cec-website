@@ -1,0 +1,28 @@
+{
+  "name": "cec-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:pug": "pug src/pug -o dist -P",
+    "build:scss": "sass src/scss/main.scss dist/css/main.css",
+    "build": "npm run build:pug && npm run build:scss",
+    "watch:pug": "pug src/pug -o dist -P -w",
+    "watch:scss": "sass --watch src/scss/main.scss:dist/css/main.css",
+    "watch": "npm run watch:pug & npm run watch:scss",
+    "start": "live-server dist --port=8080 --no-browser --ignore=css,js,pug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "pug": "^3.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.86.3",
+    "vite": "^6.3.2",
+    "vite-plugin-pug": "^0.4.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

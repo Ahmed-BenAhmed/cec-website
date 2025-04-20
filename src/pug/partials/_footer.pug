@@ -1,0 +1,68 @@
+//- partials/_footer.pug
+footer.footer
+  .container
+    .footer__content
+      .footer__brand
+        a.footer__logo(href="/")
+          span.footer__logo-text CEC
+          span.footer__logo-text.footer__logo-text--light CLUB
+        p.footer__tagline Technology we love it, live it, share it
+        
+        .footer__social
+          a.footer__social-link(href="#", aria-label="Twitter")
+            i.icon-twitter
+          a.footer__social-link(href="#", aria-label="GitHub")
+            i.icon-github
+          a.footer__social-link(href="#", aria-label="LinkedIn")
+            i.icon-linkedin
+          a.footer__social-link(href="#", aria-label="Discord")
+            i.icon-discord
+            
+      .footer__column
+        h4.footer__heading Quick Links
+        ul.footer__list
+          li.footer__item
+            a.footer__link(href="/") Home
+          li.footer__item
+            a.footer__link(href="/about") About Us
+          li.footer__item
+            a.footer__link(href="/events") Events
+          li.footer__item
+            a.footer__link(href="/projects") Projects
+          
+      .footer__column
+        h4.footer__heading Resources
+        ul.footer__list
+          li.footer__item
+            a.footer__link(href="/blog") Blog
+          li.footer__item
+            a.footer__link(href="/resources") Resources
+          li.footer__item
+            a.footer__link(href="/join") Join Us
+          li.footer__item
+            a.footer__link(href="/faq") FAQ
+            
+      .footer__column
+        h4.footer__heading Contact
+        ul.footer__list
+          li.footer__item
+            a.footer__link(href="mailto:contact@ignitetechhub.com") 
+              i.icon-email
+              | contact@ignitetechhub.com
+          li.footer__item
+            a.footer__link(href="tel:+11234567890") 
+              i.icon-phone
+              | (123) 456-7890
+          li.footer__item
+            address.footer__address
+              i.icon-location
+              | Tech University Campus,
+              br
+              | Innovation Street, 12345
+    
+    .footer__bottom
+      p.footer__copyright © 2025 Ignite Tech Hub. All rights reserved.
+      .footer__legal
+        a.footer__legal-link(href="/privacy") Privacy Policy
+        span.footer__legal-separator |
+        a.footer__legal-link(href="/terms") Terms of Service

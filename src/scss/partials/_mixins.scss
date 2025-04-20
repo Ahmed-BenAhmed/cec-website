@@ -1,0 +1,87 @@
+@use 'variables' as *;
+// Mixins
+
+// Media query mixins
+@mixin media-breakpoint-up($breakpoint) {
+    @if $breakpoint == sm {
+      @media (min-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+      @media (min-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == lg {
+      @media (min-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xl {
+      @media (min-width: $breakpoint-xl) { @content; }
+    }
+  }
+  
+  // Flex mixins
+  @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+  }
+  
+  // Grid mixins
+  @mixin grid($columns: 1, $gap: $spacing-md) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+  }
+  
+  // Typography mixins
+  @mixin font-size($size, $line-height: 1.5) {
+    font-size: $size;
+    line-height: $line-height;
+  }
+  
+  // Container mixin
+  @mixin container {
+    width: 100%;
+    // max-width: $container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+  
+  // Button mixin
+  @mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-sm $spacing-lg;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all $transition-fast;
+    text-decoration: none;
+    border: none;
+    font-family: $font-family-primary;
+    white-space: nowrap;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  // Category badge mixin
+  @mixin category-badge($background-color) {
+    background-color: $background-color;
+    color: $color-dark;
+    padding: $spacing-xxs $spacing-xs;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+  }
+  
+  // Card hover effect
+  @mixin card-hover {
+    transition: transform $transition-medium;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }

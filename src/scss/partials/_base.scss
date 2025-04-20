@@ -1,0 +1,62 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+// Base styles
+
+// Reset box-sizing
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  // Set base styles
+  html {
+    font-size: $font-size-base;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: $font-family-primary;
+    color: $color-text;
+    background-color: $color-darker;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  // Remove default margin
+  h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl {
+    margin: 0;
+  }
+  
+  // Remove default padding
+  ul, ol {
+    padding: 0;
+    list-style: none;
+  }
+  
+  // Set default link style
+  a {
+    color: $color-text;
+    text-decoration: none;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  
+  // Make images responsive
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  // Container
+  .container {
+    @include container;
+  }
+  
+  // Section spacing
+  section {
+    padding: $spacing-xxl 0;
+  }

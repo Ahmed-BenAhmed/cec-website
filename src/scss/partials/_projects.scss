@@ -1,0 +1,47 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.projects {
+    background-color: $color-dark;
+    
+    &__filters {
+      @include flex(row, center, center, wrap);
+      margin-bottom: $spacing-xl;
+    }
+    
+    &__grid {
+      @include grid(1, $spacing-lg);
+      
+      @include media-breakpoint-up(md) {
+        @include grid(2, $spacing-lg);
+      }
+      
+      @include media-breakpoint-up(lg) {
+        @include grid(3, $spacing-lg);
+      }
+    }
+  }
+  
+  // Projects header
+  .projects-header {
+    padding: $spacing-xxl 0;
+    text-align: center;
+    background-color: $color-dark;
+    
+    &__title {
+      @include font-size($font-size-xxxl, 1.2);
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-md;
+      
+      &-highlight {
+        color: $color-primary;
+      }
+    }
+    
+    &__description {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: $color-text-muted;
+    }
+  }

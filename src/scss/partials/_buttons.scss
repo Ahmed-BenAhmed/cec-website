@@ -1,0 +1,65 @@
+@use 'sass:color'; // Add this at the top of _buttons.scss
+@use 'base' as *;
+@use 'mixins' as *;
+@use 'variables' as *;
+// Base button
+.btn {
+    @include button-base;
+    
+    // Primary button
+    &--primary {
+      background-color: $color-primary;
+      color: $color-dark;
+      
+      &:hover {
+        background-color:  color.adjust($color-primary, $lightness: -10%);
+      }
+    }
+    
+    // Secondary button
+    &--secondary {
+      background-color: transparent;
+      border: 1px solid $color-primary;
+      color: $color-primary;
+      
+      &:hover {
+        background-color: rgba($color-primary, 0.1);
+      }
+    }
+    
+    // Sizes
+    &--sm {
+      font-size: $font-size-small;
+      padding: $spacing-xs $spacing-md;
+    }
+    
+    &--lg {
+      font-size: $font-size-large;
+      padding: $spacing-md $spacing-xl;
+    }
+  }
+  
+  // Projects filter buttons
+  .projects__filter-btn {
+    @include button-base;
+    background-color: $color-secondary;
+    color: $color-text;
+    font-size: $font-size-small;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius-pill;
+    margin-right: $spacing-xs;
+    margin-bottom: $spacing-xs;
+    
+    &:hover {
+      background-color: color.adjust($color-secondary, $lightness: 10%);
+    }
+    
+    &--active {
+      background-color: $color-primary;
+      color: $color-dark;
+      
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }

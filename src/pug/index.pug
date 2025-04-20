@@ -1,0 +1,79 @@
+//- index.pug
+extends layouts/_layout.pug
+
+block content
+  include partials/_projects-header.pug
+  
+  section.projects
+    .container
+      .projects__filters
+        button.projects__filter-btn.projects__filter-btn--active(data-filter="all") All
+        button.projects__filter-btn(data-filter="web") Web
+        button.projects__filter-btn(data-filter="mobile") Mobile
+        button.projects__filter-btn(data-filter="ai") AI
+        button.projects__filter-btn(data-filter="data") Data
+        button.projects__filter-btn(data-filter="iot") IoT
+      
+      .projects__grid
+        //- First row
+        include partials/_project-card.pug
+        +project-card(
+          'EduSync', 
+          'A collaborative learning platform that synchronizes study materials and tracks progress across team members.', 
+          'web', 
+          '/images/projects/edusync.jpg',
+          ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+          ['A', 'M', 'K']
+        )
+        
+        +project-card(
+          'CampusNav', 
+          'A mobile application that provides indoor navigation around campus buildings with accessibility features.', 
+          'mobile', 
+          '/images/projects/campusnav.jpg',
+          ['Flutter', 'Firebase', 'Google Maps API'],
+          ['S', 'M', 'EW']
+        )
+        
+        +project-card(
+          'EcoTrack', 
+          'An IoT solution for tracking and improving energy consumption in the university buildings with real-time data visualization.', 
+          'iot', 
+          '/images/projects/ecotrack.jpg',
+          ['Arduino', 'Raspberry Pi', 'Python', 'React'],
+          ['K', 'B', 'EB']
+        )
+        
+        //- Second row
+        +project-card(
+          'StudyBuddy', 
+          'An AI-powered study assistant that generates quiz questions and provides feedback on answers based on class materials.', 
+          'ai', 
+          '/images/projects/studybuddy.jpg',
+          ['Python', 'TensorFlow', 'OpenAI API', 'Flask'],
+          ['V', 'D', 'G']
+        )
+        
+        +project-card(
+          'EventMaster', 
+          'A comprehensive event management platform for student club events with attendance tracking and feedback collection.', 
+          'web', 
+          '/images/projects/eventmaster.jpg',
+          ['Vue.js', 'Express', 'PostgreSQL', 'AWS'],
+          ['L', 'R', 'NT']
+        )
+        
+        +project-card(
+          'FoodShare', 
+          'A mobile app connecting students with excess food from campus events to reduce waste and fight food insecurity.', 
+          'mobile', 
+          '/images/projects/foodshare.jpg',
+          ['React Native', 'Firebase', 'Google Maps API'],
+          ['M', 'J', 'AW']
+        )
+  
+  section.cta
+    .container
+      h2.cta__title Have an idea for a new project?
+      p.cta__text We're always looking for new ideas to explore. If you have a project concept that you'd like to develop with the support of our tech community, we'd love to hear about it.
+      a.btn.btn--primary(href="#") Start a Project

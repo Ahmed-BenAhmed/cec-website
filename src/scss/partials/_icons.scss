@@ -1,0 +1,75 @@
+// Icon styles
+
+// Base icon style
+[class^="icon-"] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    vertical-align: -0.125em;
+  }
+  
+  // Code icon
+  .icon-code {
+    &::before {
+      content: "\f121"; // Font Awesome code icon unicode
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+  
+  // Social media icons
+  .icon-twitter {
+    &::before {
+      content: "\f099"; // Font Awesome twitter icon unicode
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+  
+  .icon-github {
+    &::before {
+      content: "\f09b"; // Font Awesome github icon unicode
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+  
+  .icon-linkedin {
+    &::before {
+      content: "\f0e1"; // Font Awesome linkedin icon unicode
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+  
+  .icon-discord {
+    &::before {
+      content: "\f392"; // Font Awesome discord icon unicode
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+  
+  // Contact icons
+  .icon-email {
+    &::before {
+      content: "\f0e0"; // Font Awesome envelope icon unicode
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+  
+  .icon-phone {
+    &::before {
+      content: "\f095"; // Font Awesome phone icon unicode
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+  
+  .icon-location {
+    &::before {
+      content: "\f3c5"; // Font Awesome map-marker-alt icon unicode
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
