@@ -2,20 +2,25 @@
 // Import partials
 
 // Base styles
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
-@use 'partials/normalize' as *;
-@use 'partials/base' as *;
-@use 'partials/typography' as *;
-@use 'partials/buttons' as *;
-@use 'partials/icons' as *;
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+@use "partials/normalize" as *;
+@use "partials/base" as *;
+@use "partials/typography" as *;
+@use "partials/buttons" as *;
+@use "partials/icons" as *;
 
 // Layout components
-@use 'partials/layout' as *;
-@use 'partials/header' as *;
-@use 'partials/footer' as *;
+@use "partials/layout" as *;
+@use "partials/header" as *;
+@use "partials/footer" as *;
 
 // Page-specific components
-@use 'partials/projects' as *;
-@use 'partials/project-card' as *;
-@use 'partials/cta' as *;
+@use "partials/projects" as *;
+@use "partials/project-card" as *;
+@use "partials/cta" as *;
+
+@use "partials/contact" as *;
+
+// Homepage Components
+@use "partials/hero" as *;

@@ -18,11 +18,12 @@
   "devDependencies": {
     "pug": "^3.0.3",
     "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.86.3",
+    "sass": "^1.87.0",
     "vite": "^6.3.2",
     "vite-plugin-pug": "^0.4.1"
   },
   "dependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "scss": "^0.2.4"
   }
 }

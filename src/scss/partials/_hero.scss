@@ -1,0 +1,50 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.hero {
+  background-color: $color-dark; // Fallback color
+  // Replace 'path/to/your/hero-image.jpg' with your actual image path
+  // For example: '/images/hero-background.jpg'
+  // Ensure the image is in your 'dist/images' folder after build
+  background-image: linear-gradient(
+      rgba($color-dark, 0.6),
+      rgba($color-dark, 0.6)
+    ),
+    url("/images/placeholder-hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: $spacing-xxxl * 2 0; // Generous vertical padding
+  min-height: 70vh; // Make it take at least 70% of the viewport height
+  display: flex;
+  align-items: center; // Vertically center content
+  text-align: center; // Center text for inline/inline-block children
+
+  .container {
+    // The container will already center itself horizontally due to its own styles
+    // but we ensure its content is ready for text-align: center
+  }
+
+  &__title {
+    font-size: $font-size-xxxl * 1.5; // Make title significantly larger
+    font-weight: $font-weight-bold;
+    color: $color-text; // Ensure text is white for dark backgrounds
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: $font-size-xl;
+    color: $color-text-muted;
+    margin-bottom: $spacing-xl;
+    max-width: 700px; // Prevent subtitle from being too wide
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    margin-top: $spacing-lg;
+    padding: $spacing-md $spacing-xl; // Make button a bit larger
+    font-size: $font-size-large;
+  }
+}
