@@ -1,35 +1,38 @@
 {
-  "name": "cec-website",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build:pug": "pug src/pug -o dist -P",
-    "build:scss": "sass src/scss/main.scss dist/css/main.css",
-    "build:ts": "tsc",
-    "build": "npm run build:pug && npm run build:scss && npm run build:ts && npm run copy_public",
-    "copy_public": "copyfiles -u 1 src/public/**/* dist",
-    "watch:pug": "pug src/pug -o dist -P -w",
-    "watch:scss": "sass --watch src/scss/main.scss:dist/css/main.css",
-    "watch:ts": "tsc --watch",
-    "watch": "npm run watch:pug & npm run watch:scss & npm run watch:ts",
-    "start": "live-server dist --port=8081 --no-browser --ignore=css,js,pug"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "copyfiles": "^2.4.1",
-    "pug": "^3.0.3",
-    "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.87.0",
-    "vite": "^6.3.2",
-    "vite-plugin-pug": "^0.4.1"
-  },
-  "dependencies": {
-    "cec-website": "file:",
-    "live-server": "^1.2.2",
-    "scss": "^0.2.4",
-    "typescript": "^5.8.3"
-  }
+    "name": "cec-website",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "build:pug": "pug frontend/src/pug -o frontend/dist -P",
+        "build:scss": "sass frontend/src/scss/main.scss frontend/dist/css/main.css",
+        "build:ts": "tsc",
+        "build": "npm run build:pug && npm run build:scss && npm run build:ts && npm run copy_public",
+        "copy_public": "copyfiles -u 2 frontend/src/public/**/* frontend/dist",
+        "watch:pug": "pug frontend/src/pug -o dist -P -w",
+        "watch:scss": "sass --watch frontend/src/scss/main.scss:frontend/dist/css/main.css",
+        "watch:ts": "tsc --watch",
+        "watch": "npm run watch:pug & npm run watch:scss & npm run watch:ts",
+        "start": "live-server frontend/dist --port=8081 --no-browser --ignore=css,js,pug",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d frontend/dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "copyfiles": "^2.4.1",
+        "gh-pages": "^6.3.0",
+        "pug": "^3.0.3",
+        "pug-cli": "^1.0.0-alpha6",
+        "sass": "^1.87.0",
+        "vite": "^6.3.2",
+        "vite-plugin-pug": "^0.4.1"
+    },
+    "dependencies": {
+        "cec-website": "file:",
+        "live-server": "^1.2.2",
+        "scss": "^0.2.4",
+        "typescript": "^5.8.3"
+    }
 }
