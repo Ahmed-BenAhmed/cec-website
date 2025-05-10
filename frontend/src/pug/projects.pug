@@ -1,0 +1,64 @@
+//- projects.pug
+extends layouts/_layout.pug
+
+block content
+  include partials/_projects-header.pug
+  
+  section.projects
+    .container
+      
+      
+      .projects__grid#projects-container
+        include partials/_project-card.pug
+
+
+        +project-card(
+          'Weather App',
+          'A web application providing real-time weather updates and forecasts. Users can search for cities to view temperature, conditions, and hourly predictions.',
+          'web',
+          'public/images/projects/weather.jpg',
+          [],
+          []
+        )
+
+        +project-card(
+          'CityGuide+',
+          'A web application for discovering and navigating popular cities. Features city information and QR code integration for enhanced exploration.',
+          'web',
+          'public/images/projects/tourist.jpg',
+          [],
+          []
+        )
+
+        +project-card(
+          'Palestine Chronicle',
+          'A news portal dedicated to events, history, and information related to Palestine. Offers categorized news for easy browsing.',
+          'web',
+          'public/images/projects/palestine.jpg',
+          [],
+          []
+        )
+
+        +project-card(
+          'Stay.Healthy Platform',
+          'A web application promoting a balanced lifestyle by helping users track health metrics like BMI and BMR, and offering guidance on well-being.',
+          'web',
+          'public/images/projects/healthy.jpg',
+          [],
+          []
+        )
+
+        +project-card(
+          'BookWise Hub',
+          'A web platform for personal development book enthusiasts. Allows users to discover books, manage reading lists, and access summaries to boost their potential.',
+          'web',
+          'public/images/projects/books.jpg',
+          [],
+          []
+        )
+
+  section.cta
+    .container
+      h2.cta__title Have an idea for a new project?
+      p.cta__text We're always looking for new ideas to explore. If you have a project concept that you'd like to develop with the support of our tech community, we'd love to hear about it.
+      a.btn.btn--primary(href="#") Start a Project
