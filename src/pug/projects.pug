@@ -6,72 +6,58 @@ block content
   
   section.projects
     .container
-      .projects__filters
-        button.projects__filter-btn.projects__filter-btn--active(data-filter="all") All
-        button.projects__filter-btn(data-filter="web") Web
-        button.projects__filter-btn(data-filter="mobile") Mobile
-        button.projects__filter-btn(data-filter="ai") AI
-        button.projects__filter-btn(data-filter="data") Data
-        button.projects__filter-btn(data-filter="iot") IoT
+      
       
       .projects__grid
         include partials/_project-card.pug
+       
+
+        
         +project-card(
-          'EduSync', 
-          'A collaborative learning platform that synchronizes study materials and tracks progress across team members.', 
+          'ClimaView Weather App', 
+          'A web application providing real-time weather updates and forecasts. Users can search for cities to view temperature, conditions, and hourly predictions.', 
           'web', 
-          '/images/projects/edusync.jpg',
-          ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-          ['A', 'M', 'K']
+          'public/images/projects/weather.jpg',
+          [],
+          
         )
         
         +project-card(
-          'CampusNav', 
-          'A mobile application that provides indoor navigation around campus buildings with accessibility features.', 
+          'CityGuide+', 
+          'A mobile application for discovering and navigating popular cities. Features city information and QR code integration for enhanced exploration.', 
           'mobile', 
-          '/images/projects/campusnav.jpg',
-          ['Flutter', 'Firebase', 'Google Maps API'],
-          ['S', 'M', 'EW']
+          'public/images/projects/tourist.jpg',
+          [],
+          
         )
         
         +project-card(
-          'EcoTrack', 
-          'An IoT solution for tracking and improving energy consumption in the university buildings with real-time data visualization.', 
-          'iot', 
-          '/images/projects/ecotrack.jpg',
-          ['Arduino', 'Raspberry Pi', 'Python', 'React'],
-          ['K', 'B', 'EB']
-        )
-        
-        +project-card(
-          'StudyBuddy', 
-          'An AI-powered study assistant that generates quiz questions and provides feedback on answers based on class materials.', 
-          'ai', 
-          '/images/projects/studybuddy.jpg',
-          ['Python', 'TensorFlow', 'OpenAI API', 'Flask'],
-          ['V', 'D', 'G']
-        )
-        
-        +project-card(
-          'EventMaster', 
-          'A comprehensive event management platform for student club events with attendance tracking and feedback collection.', 
+          'Palestine Chronicle', 
+          'A news portal dedicated to events, history, and information related to Palestine. Offers categorized news for easy browsing.', 
           'web', 
-          '/images/projects/eventmaster.jpg',
-          ['Vue.js', 'Express', 'PostgreSQL', 'AWS'],
-          ['L', 'R', 'NT']
+          'public/images/projects/palestine.jpg',
+          [],
+          
         )
         
         +project-card(
-          'FoodShare', 
-          'A mobile app connecting students with excess food from campus events to reduce waste and fight food insecurity.', 
-          'mobile', 
-          '/images/projects/foodshare.jpg',
-          ['React Native', 'Firebase', 'Google Maps API'],
-          ['M', 'J', 'AW']
+          'Stay.Healthy Platform', 
+          'A web application promoting a balanced lifestyle by helping users track health metrics like BMI and BMR, and offering guidance on well-being.', 
+          'web', 
+          'public/images/projects/healthy.jpg',
+          [],
+          
+        )
+        
+        +project-card(
+          'BookWise Hub', 
+          'A web platform for personal development book enthusiasts. Allows users to discover books, manage reading lists, and access summaries to boost their potential.', 
+          'web', 
+          'public/images/projects/books.jpg',
+          [],
+          
         )
 
-  //- You might want to include the CTA section on the projects page as well, or not.
-  //- For now, I'm keeping it similar to the original index page structure.
   section.cta
     .container
       h2.cta__title Have an idea for a new project?

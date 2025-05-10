@@ -7,6 +7,7 @@ $color-darker: #121212;
 $color-text: #ffffff;
 $color-text-muted: rgba(255, 255, 255, 0.6);
 $color-border: #333333;
+$color-light: #ffffff; // White color, adjust as needed
 
 // Badge colors
 $color-web: #ffd60a;
@@ -50,6 +51,17 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+// Grid breakpoints
+// Define the breakpoints for responsive design. These are standard values.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
 
 // Border radius
 $border-radius-sm: 4px;

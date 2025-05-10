@@ -23,6 +23,7 @@
     "vite-plugin-pug": "^0.4.1"
   },
   "dependencies": {
+    "cec-website": "file:",
     "live-server": "^1.2.2",
     "scss": "^0.2.4"
   }

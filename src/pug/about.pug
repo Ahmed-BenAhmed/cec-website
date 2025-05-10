@@ -5,11 +5,225 @@ block content
   section.page-header
     .container
       h1.page-header__title About Us
-  
-  section.about-content
+      p.page-header__subtitle Learn about our journey, mission and the team behind CEC Club
+
+  section.about-hero
     .container
-      p This is the About Us page. Content will be added here.
-      //- Add more detailed sections like:
-      //- Our Mission
-      //- Our Team
-      //- Our History
+      .about-hero__grid
+        .about-hero__content
+          h2.section-title Our Story
+          p.about-hero__text 
+            | Founded in 2022, <strong>Computer Engineering Club (CEC)</strong> started as a small group of passionate students 
+            | with a shared vision: creating a vibrant tech community within ENSA Berrechid. What began 
+            | with just a handful of members has rapidly grown into one of the most active and 
+            | influential student tech organizations on campus.
+          p.about-hero__text
+            | Today, we provide a platform for students to develop technical skills, 
+            | collaborate on innovative projects, and connect with industry professionals.
+          
+        .about-hero__image
+          img(src="/public/images/founded.jpg", alt="CEC Club members at a tech event")
+
+  section.mission-section
+    .container
+      .section-header
+        h2.section-title Our Mission
+        p.section-subtitle Empowering students through technology, innovation, and collaboration
+      
+      .mission-grid
+        .mission-card
+          i.fas.fa-laptop-code.mission-card__icon
+          h3.mission-card__title Educate
+          p.mission-card__text We provide workshops, courses, and tutorials to help students develop valuable technical skills outside the traditional curriculum.
+        
+        .mission-card
+          i.fas.fa-users.mission-card__icon
+          h3.mission-card__title Connect
+          p.mission-card__text We create opportunities for networking among students, faculty, and industry professionals through events and collaborations.
+        
+        .mission-card
+          i.fas.fa-lightbulb.mission-card__icon
+          h3.mission-card__title Innovate
+          p.mission-card__text We encourage members to pursue creative solutions to real-world problems through project-based learning and hackathons.
+        
+        .mission-card
+          i.fas.fa-hands-helping.mission-card__icon
+          h3.mission-card__title Support
+          p.mission-card__text We foster an inclusive community where everyone can find mentorship, resources, and encouragement to achieve their tech goals.
+
+  section.stats-section
+    .container
+      .stats-grid
+        .stats-item
+          .stats-item__number 200+
+          .stats-item__label Active Members
+        .stats-item
+          .stats-item__number 30+
+          .stats-item__label Events Hosted
+        .stats-item
+          .stats-item__number 15+
+          .stats-item__label Workshops
+        .stats-item
+          .stats-item__number 10+
+          .stats-item__label Industry Partners
+
+  section.activities-section
+    .container
+      .section-header
+        h2.section-title What We Do
+        p.section-subtitle Explore the various activities and initiatives we organize
+      
+      .activities-grid
+        .activity-card
+          .activity-card__icon-wrapper
+            i.fas.fa-chalkboard-teacher
+          h3.activity-card__title Workshops & Courses
+          p.activity-card__description We regularly host hands-on workshops covering topics like web development, mobile apps, AI, cybersecurity, and more.
+        
+        .activity-card
+          .activity-card__icon-wrapper
+            i.fas.fa-trophy
+          h3.activity-card__title Competitions
+          p.activity-card__description We organize and participate in coding competitions, hackathons, and tech challenges to foster innovation and teamwork.
+        
+        .activity-card
+          .activity-card__icon-wrapper
+            i.fas.fa-microphone-alt
+          h3.activity-card__title Conferences
+          p.activity-card__description Our speaker series brings industry experts and academics to share insights on emerging technologies and career paths.
+        
+        .activity-card
+          .activity-card__icon-wrapper
+            i.fas.fa-project-diagram
+          h3.activity-card__title Projects
+          p.activity-card__description We facilitate collaborative projects that solve real problems while building practical experience for members.
+        
+        .activity-card
+          .activity-card__icon-wrapper
+            i.fas.fa-handshake
+          h3.activity-card__title Networking
+          p.activity-card__description Our mixers and industry visits help students build connections that lead to internships and job opportunities.
+        
+        .activity-card
+          .activity-card__icon-wrapper
+            i.fas.fa-graduation-cap
+          h3.activity-card__title Mentorship
+          p.activity-card__description We pair experienced members with newcomers to provide guidance, support, and knowledge transfer.
+
+  section.team-section
+    .container
+      .section-header
+        h2.section-title Our Leadership Team
+        p.section-subtitle Meet the dedicated individuals who make CEC Club possible
+      
+      .team-grid
+        // President (larger card)
+        .team-card.team-card--president
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/ahmed.png", alt="President")
+          h3.team-card__name Ahmed Ben Ahmed
+          p.team-card__role Président
+          p.team-card__bio Computer Engineering student leading our club's vision and operations.
+        
+        // Vice President
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/zouhir.png", alt="Vice President")
+          h3.team-card__name Zouhaer Serrar
+          p.team-card__role Vice Président
+          p.team-card__bio Supporting club leadership and overseeing project execution.
+        
+        // General Secretary
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/chaimaa.png", alt="General Secretary")
+          h3.team-card__name Chaima Dhah
+          p.team-card__role Secrétaire Générale
+          p.team-card__bio Managing club communications and administrative tasks.
+        
+        // Treasurer
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/aya.png", alt="Treasurer")
+          h3.team-card__name Aya Farmati
+          p.team-card__role Trésorière
+          p.team-card__bio Handling club finances and budget planning.
+        
+        // Manager
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/sabti.png", alt="Manager")
+          h3.team-card__name Sabti Riad
+          p.team-card__role Manager
+          p.team-card__bio Coordinating club activities and operations.
+        
+        // Protocol Chief
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/wissal.png", alt="Protocol Chief")
+          h3.team-card__name Wissal Cheick
+          p.team-card__role Chef de Protocole
+          p.team-card__bio Overseeing event organization and official procedures.
+        
+        // Assistant Protocol Chief
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/asmaa.png", alt="Assistant Protocol Chief")
+          h3.team-card__name Asmaa Talal
+          p.team-card__role Chef de Protocole Adjointe
+          p.team-card__bio Assisting in event planning and protocol management.
+        
+        // Event Coordinator
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/aitlhaj.png", alt="Event Coordinator")
+          h3.team-card__name Ait Elhaj Ghizlane
+          p.team-card__role Responsable Événementielle
+          p.team-card__bio Planning and executing club events and activities.
+        
+        // Training Manager
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/eljazouly.png", alt="Training Manager")
+          h3.team-card__name Eljazouly Fatima Zahra
+          p.team-card__role Responsable de Formation
+          p.team-card__bio Developing and coordinating training programs.
+        
+        // Assistant Training Manager
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/hamz.png", alt="Assistant Training Manager")
+          h3.team-card__name Hamza Mousrij
+          p.team-card__role Responsable de Formation Adjoint
+          p.team-card__bio Assisting with workshop planning and educational initiatives.
+        
+        // Multimedia Manager
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/soufian.png", alt="Multimedia Manager")
+          h3.team-card__name Soufiane Hamouche
+          p.team-card__role Responsable Multimédia
+          p.team-card__bio Creating and managing club's digital content.
+        
+        // Design Manager
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/achraf.png", alt="Design Manager")
+          h3.team-card__name Achraf Abdelfadel
+          p.team-card__role Responsable Design
+          p.team-card__bio Leading the visual identity and design projects.
+        
+        // Social Media Manager
+        .team-card
+          .team-card__image-wrapper
+            img.team-card__image(src="/public/images/team/sara.png", alt="Social Media Manager")
+          h3.team-card__name Sara Mesnaoui
+          p.team-card__role Photographer et Réseaux Sociaux
+          p.team-card__bio Managing the club's social media presence and photography.
+
+  section.join-cta
+    .container
+      .join-cta__content
+        h2.join-cta__title Become a Part of Our Tech Community
+        p.join-cta__text Whether you're a coding expert or just starting out, there's a place for you in CEC Club. Join us and help shape the future of technology at ENSA Berrechid.
+        a.btn.btn--primary.join-cta__btn(href="contact.html") Join CEC Club

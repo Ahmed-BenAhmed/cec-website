@@ -1,50 +1,296 @@
 @use "variables" as *;
 @use "mixins" as *;
+@use "sass:color";
 
 .hero {
-  background-color: $color-dark; // Fallback color
-  // Replace 'path/to/your/hero-image.jpg' with your actual image path
-  // For example: '/images/hero-background.jpg'
-  // Ensure the image is in your 'dist/images' folder after build
-  background-image: linear-gradient(
-      rgba($color-dark, 0.6),
-      rgba($color-dark, 0.6)
-    ),
-    url("/images/placeholder-hero.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: $spacing-xxxl * 2 0; // Generous vertical padding
-  min-height: 70vh; // Make it take at least 70% of the viewport height
-  display: flex;
-  align-items: center; // Vertically center content
-  text-align: center; // Center text for inline/inline-block children
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: $color-dark; // Fallback
 
-  .container {
-    // The container will already center itself horizontally due to its own styles
-    // but we ensure its content is ready for text-align: center
+  // Image setup with proper responsive behavior
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/public/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: brightness(0.85); // Slightly darken image for better contrast
+    transition: transform 8s ease-out;
+
+    // Subtle zoom effect
+    .hero:hover & {
+      transform: scale(1.05);
+    }
+
+    // Responsive background positioning
+    @include media-breakpoint-down(md) {
+      background-position: 65% center;
+    }
   }
 
+  // Advanced gradient overlay
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.75) 30%,
+      rgba(0, 0, 0, 0.6) 70%,
+      rgba(255, 223, 0, 0.4) 100%
+    );
+    z-index: 2;
+  }
+
+  // Particles background for tech feel
+  &__particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+
+  // Content positioning
+  &__content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    padding: 0 $spacing-md;
+
+    .container {
+      max-width: 1200px;
+      text-align: center;
+    }
+  }
+
+  // Typography with enhanced styling
   &__title {
-    font-size: $font-size-xxxl * 1.5; // Make title significantly larger
-    font-weight: $font-weight-bold;
-    color: $color-text; // Ensure text is white for dark backgrounds
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
     margin-bottom: $spacing-md;
-    line-height: 1.2;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(30px);
+
+    // Responsive text size adjustments
+    @include media-breakpoint-down(lg) {
+      font-size: 4rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 3.2rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 2.8rem;
+    }
+
+    &-highlight {
+      color: $color-primary;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 5px;
+        background: $color-primary;
+        border-radius: 6px;
+        box-shadow: 0 2px 10px rgba($color-primary, 0.7);
+      }
+    }
   }
 
   &__subtitle {
-    font-size: $font-size-xl;
-    color: $color-text-muted;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
     margin-bottom: $spacing-xl;
-    max-width: 700px; // Prevent subtitle from being too wide
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.6;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(30px);
+
+    @include media-breakpoint-down(md) {
+      font-size: 1.4rem;
+      padding: 0 $spacing-md;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
-  .btn {
-    margin-top: $spacing-lg;
-    padding: $spacing-md $spacing-xl; // Make button a bit larger
-    font-size: $font-size-large;
+  // Stats section - key figures
+  &__stats {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xxl;
+    margin: $spacing-xl auto;
+    opacity: 0;
+    transform: translateY(30px);
+
+    @include media-breakpoint-down(sm) {
+      gap: $spacing-lg;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__stat {
+    text-align: center;
+    padding: $spacing-md;
+  }
+
+  &__stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: $color-primary;
+    display: block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: $spacing-sm;
+
+    @include media-breakpoint-down(md) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__stat-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  // Social media links
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-top: $spacing-xl;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  &__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-dark;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba($color-primary, 0.5);
+    }
+  }
+}
+
+// Enhanced scroll indicator
+.scroll-indicator {
+  position: absolute;
+  bottom: $spacing-xl;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  animation: bounce 3s infinite;
+  text-decoration: none;
+
+  .scroll-text {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: $spacing-sm;
+    opacity: 0.8;
+  }
+
+  i {
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+// Animations
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

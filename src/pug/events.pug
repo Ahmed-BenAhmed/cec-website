@@ -2,14 +2,124 @@
 extends layouts/_layout.pug
 
 block content
-  section.page-header
-    .container
-      h1.page-header__title Events
+  //- Enhanced Hero Section with parallax effect 
+  section.page-header.events-hero
+    .page-header__overlay
+      .container
+        h1.page-header__title
+          span.highlight Events
+          |  & Workshops
+        p.page-header__subtitle Discover our tech gatherings, workshops, and learning opportunities
   
-  section.events-content
+  section.events-gallery
     .container
-      p This is the Events page. Upcoming and past events will be listed here.
-      //- Add sections for:
-      //- Upcoming Events
-      //- Past Events Gallery
-      //- Event Calendar
+      .section-title-container
+        h2.section-title 
+          span.text-primary { 
+          | Past Events
+          span.text-primary  }
+
+      //- Featured event section (larger display)
+      .featured-event
+        //- Event 1: Problem Solving (Featured)
+        .event-card.event-card--featured 
+          span.event-card__badge Featured
+          .event-card__image-container
+            img.event-card__image(src="./public/images/events/pr-solv.png", alt="Problem Solving Event")
+          .event-card__content
+            h3.event-card__title Problem Solving
+            .event-card__meta
+              p.event-card__date 
+                i.far.fa-calendar-alt 
+                | April 24, 2025 - 10:00 PM
+              p.event-card__platform
+                i.fas.fa-map-marker-alt
+                | Google Meet
+            p.event-card__description A session focused on problem-solving techniques and critical thinking. Discover advanced approaches to tackle complex programming challenges.
+            a.btn.btn-primary.event-card__btn(href="#") Event Details
+
+      //- Regular events grid
+      .events-grid
+        //- Event 2: Hackathons
+        .event-card
+          .event-card__image-container
+            img.event-card__image(src="./public/images/events/pod.jpg", alt="Hackathons Event")
+          .event-card__content
+            h3.event-card__title Hackathons: Where It All Began
+            .event-card__meta
+              p.event-card__date 
+                i.far.fa-calendar-alt 
+                | December 27, 2024
+              p.event-card__platform
+                i.fas.fa-map-marker-alt
+                | Online
+            p.event-card__speakers 
+              strong Speakers: 
+              | Hicham Maghraoui, Othman Moussaoui, Ismail Hamdach
+            p.event-card__description Exploring the origins and impact of hackathons with industry experts.
+            a.btn.btn-outline.event-card__btn(href="#") Learn More
+
+        //- Event 3: From Idea to Product
+        .event-card
+          .event-card__image-container
+            img.event-card__image(src="./public/images/events/id-to-pd.png", alt="From Idea to Product Event")
+          .event-card__content
+            h3.event-card__title From Idea to Product
+            .event-card__meta
+              p.event-card__date 
+                i.far.fa-calendar-alt 
+                | April 30, 2025
+              p.event-card__platform
+                i.fas.fa-map-marker-alt
+                | Google Meet
+            p.event-card__speakers 
+              strong Speakers: 
+              | Bachir Cherrat, Chakib Dekik
+            p.event-card__description A workshop detailing the journey from a concept to a market-ready product.
+            a.btn.btn-outline.event-card__btn(href="#") Learn More
+        
+        //- Event 4: Geeksblabla On Campus
+        .event-card
+          .event-card__image-container
+            img.event-card__image(src="./public/images/events/geeks.png", alt="Geeksblabla On Campus Event")
+          .event-card__content
+            h3.event-card__title Geeksblabla On Campus
+            .event-card__meta
+              p.event-card__date 
+                i.far.fa-calendar-alt 
+                | February 26, 2025
+              p.event-card__platform
+                i.fas.fa-map-marker-alt
+                | ENSA Berrechid
+            p.event-card__speakers 
+              strong Speakers: 
+              | Youssef El Azizi, Mohamed Daoudi
+            p.event-card__description An engaging on-campus session in collaboration with Geeksblabla.
+            a.btn.btn-outline.event-card__btn(href="#") Learn More
+
+        //- Event 5: Unlock the Power of Data and AI
+        .event-card
+          .event-card__image-container
+            img.event-card__image(src="./public/images/events/ai-data.png", alt="Unlock Data and AI Event")
+          .event-card__content
+            h3.event-card__title Unlock the Power of Data and AI
+            .event-card__meta
+              p.event-card__date 
+                i.far.fa-calendar-alt 
+                | December 18, 2024
+              p.event-card__platform
+                i.fas.fa-map-marker-alt
+                | Room D7, ENSA
+            p.event-card__speakers 
+              strong Speakers: 
+              | Hafid (AI), Marwa (Data)
+            p.event-card__description An introductory session to the fascinating worlds of Data and Artificial Intelligence.
+            a.btn.btn-outline.event-card__btn(href="#") Learn More
+
+  //- Call-to-action section
+  section.events-cta
+    .container
+      .events-cta__content
+        h2.events-cta__title Ready to join our next event?
+        p.events-cta__text Stay updated with our latest workshops and tech sessions. Join our community of passionate developers!
+        a.btn.btn-primary.btn-lg(href="#") Subscribe for Updates

@@ -2,19 +2,27 @@
 extends layouts/_layout.pug
 
 block content
-  //- Placeholder for new Home page content
   section.hero
-    .container
-      h1.hero__title Welcome to CEC Club!
-      p.hero__subtitle Your hub for technology, innovation, and collaboration.
-      a.btn.btn--primary(href="projects.html") View Our Projects
-      //- You can add more sections here for the homepage, like:
-      //- About Us Snippet
-      //- Latest Events
-      //- Blog Highlights
+    .hero__overlay
+    .hero__particles#particles-js
+    .hero__content
+      .container
+        h1.hero__title.animate-in 
+          | Welcome to 
+          span.hero__title-highlight CEC Club!
+        p.hero__subtitle.animate-in Your hub for technology, innovation, and collaboration.
+        
+        .hero__stats.animate-in
+          .hero__stat
+            span.hero__stat-number 50+
+            p.hero__stat-text Members
+          .hero__stat
+            span.hero__stat-number 20+
+            p.hero__stat-text Projects
+          .hero__stat
+            span.hero__stat-number 15+
+            p.hero__stat-text Events
+            
 
-  //- The existing Call to Action section can remain or be moved/modified as needed.
-  section.cta
-    .container
-      h2.cta__title Have an idea for a new project?
-      p.cta__text We're always looking for new ideas to explore. If you have a project concept that you'd like to develop with the support of our tech community, we'd love to hear about it.
+
+  //- Other sections can be added below later as needed

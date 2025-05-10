@@ -19,8 +19,11 @@
 @use "partials/projects" as *;
 @use "partials/project-card" as *;
 @use "partials/cta" as *;
-
+@use "partials/about" as *;
 @use "partials/contact" as *;
 
 // Homepage Components
 @use "partials/hero" as *;
+
+// Events Components
+@use "partials/events";
