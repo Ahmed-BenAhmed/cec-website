@@ -6,7 +6,7 @@
 import {addProjectStyles, ProjectsManager} from './project-card.js';
 import { EventsManager, addEventStyles } from './event-card.js';
 
-const backend_endpoint = 'http://localhost:8002';
+const backend_endpoint = '162.243.168.223';
 
 
 // Example data (in a real application, this would come from an API or database)

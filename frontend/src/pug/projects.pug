@@ -8,7 +8,7 @@ block content
     .container
       
       
-      .projects__grid#projects-container
+      .projects__grid
         include partials/_project-card.pug
 
 
@@ -31,7 +31,7 @@ block content
         )
 
         +project-card(
-          'Palestine Chronicle',
+          'Palestine',
           'A news portal dedicated to events, history, and information related to Palestine. Offers categorized news for easy browsing.',
           'web',
           'public/images/projects/palestine.jpg',
@@ -49,7 +49,7 @@ block content
         )
 
         +project-card(
-          'BookWise Hub',
+          'CheckBook',
           'A web platform for personal development book enthusiasts. Allows users to discover books, manage reading lists, and access summaries to boost their potential.',
           'web',
           'public/images/projects/books.jpg',
@@ -57,6 +57,9 @@ block content
           []
         )
 
+  section.container
+    h2.text-center Projects Inserer dynamiquement par JS par connection avec base de donnees
+    div#projects-container
   section.cta
     .container
       h2.cta__title Have an idea for a new project?
