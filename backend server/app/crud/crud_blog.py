@@ -1,6 +1,6 @@
 from typing import List, Optional
 from supabase import Client
-from models.blog import BlogPostCreate, BlogPostUpdate, BlogPost
+from ..models.blog import BlogPostCreate, BlogPostUpdate, BlogPost
 from fastapi import HTTPException, status
 
 class CRUDBlog:

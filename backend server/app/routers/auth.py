@@ -16,10 +16,11 @@ load_dotenv()
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
+
 @router.post("/token", response_model=Token)
 async def login_for_access_token(
-    form_data: OAuth2PasswordRequestForm = Depends(),
-    db: Client = Depends(get_supabase)
+        form_data: OAuth2PasswordRequestForm = Depends(),
+        db: Client = Depends(get_supabase)
 ):
     user = await crud_member.get_crud_member(db).get_by_email(form_data.username)
     if not user or user["hashed_password"] != "hashed_" + form_data.password:
@@ -28,13 +29,14 @@ async def login_for_access_token(
             detail="Incorrect email or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    
+
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
         data={"sub": user["email"]},
         expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
+
 
 def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode = data.copy()

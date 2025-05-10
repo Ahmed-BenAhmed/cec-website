@@ -9,7 +9,7 @@ from ..dependencies import get_current_user, get_supabase
 router = APIRouter(
     prefix="/events",
     tags=["Events"],
-    dependencies=[Depends(get_current_user)]
+    dependencies=[]
 )
 
 @router.post("/", response_model=Event)

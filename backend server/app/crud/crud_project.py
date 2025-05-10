@@ -1,7 +1,8 @@
 from typing import List, Optional
 from supabase import Client
-from models.project import ProjectCreate, ProjectUpdate, Project, ProjectMemberCreate
+from ..models.project import ProjectCreate, ProjectUpdate, Project, ProjectMemberCreate
 from fastapi import HTTPException, status
+
 
 class CRUDProject:
     def __init__(self, db: Client):
@@ -39,16 +40,17 @@ class CRUDProject:
         return res.data[0]
 
     async def remove_member(self, project_id: int, member_id: int) -> dict:
-        res = self.db.table('project_members')\
-            .delete()\
-            .eq('project_id', project_id)\
-            .eq('member_id', member_id)\
+        res = self.db.table('project_members') \
+            .delete() \
+            .eq('project_id', project_id) \
+            .eq('member_id', member_id) \
             .execute()
         if not res.data:
             raise HTTPException(status_code=404, detail="Membership not found")
         return {"success": True}
 
-def get_crud_project(db: Client) -> CRUDProject:
-    return CRUDProject(db)
+    def get_crud_project(db: Client):
+        return CRUDProject(db)
+
 
 project = CRUDProject

@@ -11,7 +11,7 @@ class ProjectBase(BaseModel):
     end_date: Optional[datetime] = None
     github_url: Optional[HttpUrl] = None
     demo_url: Optional[HttpUrl] = None
-    cover_image_url: Optional[HttpUrl] = None
+    cover_image_url: Optional[str] = None
     tags: List[str] = []
 
 class ProjectCreate(ProjectBase):
@@ -24,7 +24,7 @@ class ProjectUpdate(BaseModel):
     status: Optional[str] = None
     github_url: Optional[HttpUrl] = None
     demo_url: Optional[HttpUrl] = None
-    cover_image_url: Optional[HttpUrl] = None
+    cover_image_url: Optional[str] = None
     tags: Optional[List[str]] = None
 
 class ProjectMember(BaseModel):

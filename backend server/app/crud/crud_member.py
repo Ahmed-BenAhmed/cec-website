@@ -1,6 +1,6 @@
 from typing import Optional
 from supabase import Client
-from models.member import MemberCreate, MemberUpdate, Member
+from ..models.member import MemberCreate, MemberUpdate, Member
 from fastapi import HTTPException, status
 
 class CRUDMember:

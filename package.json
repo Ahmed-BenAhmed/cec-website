@@ -5,17 +5,21 @@
   "scripts": {
     "build:pug": "pug src/pug -o dist -P",
     "build:scss": "sass src/scss/main.scss dist/css/main.css",
-    "build": "npm run build:pug && npm run build:scss",
+    "build:ts": "tsc",
+    "build": "npm run build:pug && npm run build:scss && npm run build:ts && npm run copy_public",
+    "copy_public": "copyfiles -u 1 src/public/**/* dist",
     "watch:pug": "pug src/pug -o dist -P -w",
     "watch:scss": "sass --watch src/scss/main.scss:dist/css/main.css",
-    "watch": "npm run watch:pug & npm run watch:scss",
-    "start": "live-server dist --port=8080 --no-browser --ignore=css,js,pug"
+    "watch:ts": "tsc --watch",
+    "watch": "npm run watch:pug & npm run watch:scss & npm run watch:ts",
+    "start": "live-server dist --port=8081 --no-browser --ignore=css,js,pug"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "pug": "^3.0.3",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.87.0",
@@ -25,6 +29,7 @@
   "dependencies": {
     "cec-website": "file:",
     "live-server": "^1.2.2",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "typescript": "^5.8.3"
   }
 }

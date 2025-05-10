@@ -12,6 +12,8 @@ pydantic==2.6.1
 httpx==0.26.0
 ```
 
+pip install passlib httpx python-jose[cryptography]
+
 ### `README.md`
 ```markdown
 # CEC Club Backend API
@@ -166,3 +168,143 @@ CREATE TABLE blog_posts (
 | `/projects` | Project management |
 | `/events` | Event management |
 | `/blog` | Blog system |
+
+
+
+### BACKEND ENTITIES
+
+Core Entities
+1. Members
+   member_id (PK)
+
+first_name
+
+last_name
+
+email (unique)
+
+phone
+
+university_id
+
+study_program
+
+year_of_study
+
+join_date
+
+role (member, admin, etc.)
+
+bio
+
+skills (array)
+
+profile_picture_url
+
+status (active, alumni)
+
+2. Projects
+   project_id (PK)
+
+title
+
+description
+
+start_date
+
+end_date (nullable)
+
+status (planning, in-progress, completed, archived)
+
+github_url (nullable)
+
+demo_url (nullable)
+
+cover_image_url
+
+tags (array of tech stacks)
+
+3. Project Members (Junction table)
+   project_id (FK)
+
+member_id (FK)
+
+role (lead, developer, designer, etc.)
+
+contribution
+
+4. Events
+event_id (PK)
+
+title
+
+description
+
+event_date
+
+start_time
+
+end_time
+
+location (physical/virtual)
+
+event_link (for virtual events)
+
+cover_image_url
+
+registration_required (boolean)
+
+max_attendees (nullable)
+
+status (upcoming, ongoing, completed, canceled)
+
+5. Event Registrations
+   registration_id (PK)
+
+event_id (FK)
+
+member_id (FK)
+
+registration_date
+
+attendance_status (registered, attended, no-show)
+
+6. Blog Posts
+   post_id (PK)
+
+title
+
+content
+
+author_id (FK to Members)
+
+publish_date
+
+last_updated
+
+status (draft, published, archived)
+
+featured_image_url
+
+tags (array)
+
+views_count
+
+9. Contact Messages
+   message_id (PK)
+
+sender_name
+
+sender_email
+
+subject
+
+message
+
+received_date
+
+status (new, in-progress, resolved)
+
+responded_by (FK to Members, nullable)
+
+response_date (nullable)

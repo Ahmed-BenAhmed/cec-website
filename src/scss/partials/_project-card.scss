@@ -82,6 +82,27 @@
       margin-right: $spacing-xs;
       margin-bottom: $spacing-xs;
     }
+    &__status-badge {
+      background-color: $color-secondary;
+      color: $color-text;
+      font-size: $font-size-small;
+      padding: $spacing-xxs $spacing-xs;
+      border-radius: $border-radius-sm;
+      margin-right: $spacing-xs;
+      margin-bottom: $spacing-xs;
+    }
+
+    &__status-badge--completed {
+      background-color: #28a745;
+    }
+
+    &__status-badge--in-progress {
+      background-color: #007bff;
+    }
+
+    &__status-badge--archived {
+      background-color: #6c757d;
+    }
     
     &__footer {
       @include flex(row, space-between, center);

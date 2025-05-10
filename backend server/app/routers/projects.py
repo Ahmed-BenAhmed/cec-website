@@ -3,13 +3,12 @@ from typing import List
 from supabase import Client
 
 from ..models.project import Project, ProjectCreate, ProjectUpdate, ProjectMemberCreate
-from ..crud import project as crud_project
+from ..crud import project as crud_project, CRUDProject
 from ..dependencies import get_current_user, get_supabase
 
 router = APIRouter(
     prefix="/projects",
     tags=["Projects"],
-    dependencies=[Depends(get_current_user)]
 )
 
 @router.post("/", response_model=Project)
@@ -25,6 +24,8 @@ async def read_projects(
     limit: int = 100,
     db: Client = Depends(get_supabase)
 ):
+    # crud = CRUDProject(db)  # Create instance directly
+    # return await crud.get_multi(skip, limit)
     return await crud_project.get_crud_project(db).get_multi(skip, limit)
 
 @router.get("/{project_id}", response_model=Project)

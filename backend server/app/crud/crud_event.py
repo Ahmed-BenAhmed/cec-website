@@ -1,6 +1,6 @@
 from typing import List, Optional
 from supabase import Client
-from models.event import EventCreate, EventUpdate, Event, EventRegistrationCreate
+from ..models.event import EventCreate, EventUpdate, Event, EventRegistrationCreate
 from fastapi import HTTPException, status
 
 class CRUDEvent:
@@ -48,7 +48,7 @@ class CRUDEvent:
             raise HTTPException(status_code=404, detail="Registration not found")
         return {"success": True}
 
-def get_crud_event(db: Client) -> CRUDEvent:
-    return CRUDEvent(db)
+    def get_crud_event(db: Client):
+        return CRUDEvent(db)
 
 event = CRUDEvent

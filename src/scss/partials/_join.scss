@@ -1,0 +1,272 @@
+
+/* Join Us Page Styles */
+.join-header {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.join-header__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.join-header__title-highlight {
+  color: #333;
+}
+
+.join-header__description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #7f8c8d;
+}
+
+.benefits {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.benefits__title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-card__icon {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.benefit-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.benefit-card__text {
+  color: #7f8c8d;
+}
+
+.join-form {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.join-form__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.join-form__info {
+  padding: 1rem;
+}
+
+.join-form__title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.join-form__text {
+  margin-bottom: 2rem;
+  color: #7f8c8d;
+}
+
+.join-form__requirements {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.join-form__subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.join-form__list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.join-form__list-item {
+  margin-bottom: 0.5rem;
+  color: #7f8c8d;
+}
+
+.join-form__form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.join-form__group {
+  margin-bottom: 1.5rem;
+}
+
+.join-form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.join-form__input,
+.join-form__select,
+.join-form__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.join-form__input:focus,
+.join-form__select:focus,
+.join-form__textarea:focus {
+  outline: none;
+  border-color:black;
+}
+
+.join-form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+}
+
+.join-form__checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.join-form__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  cursor: pointer;
+}
+
+.join-form__checkbox-label input {
+  accent-color: #333;
+}
+
+.join-form__textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.join-form__submit {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+
+
+.faq {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.faq__title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.faq__accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq__question {
+  width: 100%;
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 500;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faq__question:hover {
+  background-color: #e9ecef;
+}
+
+.faq__question::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.faq__question.active::after {
+  content: '-';
+}
+
+.faq__answer {
+  padding: 0 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq__answer.show {
+  padding: 1.25rem;
+  max-height: 500px;
+}
+
+.faq__answer p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact__grid,
+  .join-form__content {
+    grid-template-columns: 1fr;
+  }
+
+  .join-form__checkboxes {
+    grid-template-columns: 1fr;
+  }
+}

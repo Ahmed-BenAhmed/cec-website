@@ -1,0 +1,155 @@
+//- projects.pug
+extends layouts/_layout.pug
+
+block content
+  section.join#join
+    .container
+      .projects-header
+        h2.section-title Join Our Community
+        p.section-subtitle Become part of CEC CLUB and collaborate with like-minded tech enthusiasts
+
+      .benefits
+        h3.section-subtitle(style="text-align: center; margin-bottom: 2rem;") Why Join CEC CLUB?
+        .benefits__grid
+          .benefit-card
+            i.fas.fa-users.benefit-card__icon
+            h3.benefit-card__title Networking
+            p.benefit-card__text Connect with students passionate about technology and build lasting professional relationships.
+
+          .benefit-card
+            i.fas.fa-laptop-code.benefit-card__icon
+            h3.benefit-card__title Skill Development
+            p.benefit-card__text Enhance your technical skills through workshops, hackathons, and collaborative projects.
+
+          .benefit-card
+            i.fas.fa-briefcase.benefit-card__icon
+            h3.benefit-card__title Career Opportunities
+            p.benefit-card__text Gain access to internship and job opportunities through our industry connections.
+
+          .benefit-card
+            i.fas.fa-lightbulb.benefit-card__icon
+            h3.benefit-card__title Innovation
+            p.benefit-card__text Work on cutting-edge projects and turn your ideas into reality with team support.
+
+      .join-form
+        .join-form__content
+          .join-form__info
+            h2.join-form__title Ready to Join?
+            p.join-form__text Fill out the application form to become a member of CEC CLUB. We welcome students from all departments who share our passion for technology.
+
+            .join-form__requirements
+              h3.join-form__subtitle Requirements:
+              ul.join-form__list
+                li.join-form__list-item Currently enrolled at ENSA Berrechid
+                li.join-form__list-item Interest in technology and learning
+                li.join-form__list-item Commitment to attend meetings and events
+                li.join-form__list-item Willingness to collaborate with others
+
+          form.join-form__form#joinForm
+            .join-form__group
+              label.join-form__label(for="join-name") Full Name
+              input.join-form__input(type="text" id="join-name" required)
+
+            .join-form__group
+              label.join-form__label(for="join-email") Email
+              input.join-form__input(type="email" id="join-email" required)
+
+            .join-form__group
+              label.join-form__label(for="join-major") Major/Department
+              input.join-form__input(type="text" id="join-major" required)
+
+            .join-form__group
+              label.join-form__label(for="join-year") Year of Study
+              select.join-form__select(id="join-year" required)
+                option(value="") Select your year
+                option(value="1") 1st Year
+                option(value="2") 2nd Year
+                option(value="3") 3rd Year
+                option(value="4") 4th Year
+
+            .join-form__group
+              label.join-form__label Technical Interests (Select all that apply)
+              .join-form__checkboxes
+                label.join-form__checkbox-label
+                  input(type="checkbox" name="interests" value="web")
+                  | Web Development
+                label.join-form__checkbox-label
+                  input(type="checkbox" name="interests" value="mobile")
+                  | Mobile Development
+                label.join-form__checkbox-label
+                  input(type="checkbox" name="interests" value="ai")
+                  | Artificial Intelligence
+                label.join-form__checkbox-label
+                  input(type="checkbox" name="interests" value="data")
+                  | Data Science
+                label.join-form__checkbox-label
+                  input(type="checkbox" name="interests" value="iot")
+                  | IoT
+                label.join-form__checkbox-label
+                  input(type="checkbox" name="interests" value="other")
+                  | Other
+
+            .join-form__group
+              label.join-form__label(for="join-experience") Technical Experience (Optional)
+              textarea.join-form__textarea(id="join-experience" rows="4" placeholder="Briefly describe your technical background or experience...")
+
+            .join-form__group
+              label.join-form__label(for="join-motivation") Why do you want to join CEC CLUB?
+              textarea.join-form__textarea(id="join-motivation" rows="4" required)
+
+            button.btn.btn--primary.join-form__submit(type="submit") Submit Application
+
+      .faq
+        h3.section-subtitle(style="text-align: center; margin-bottom: 2rem;") Frequently Asked Questions
+        .faq__accordion
+          .faq__item
+            button.faq__question Is there a membership fee?
+            .faq__answer
+              p No, membership in CEC CLUB is completely free for all ENSA Berrechid students. We believe in making technology education accessible to everyone.
+
+          .faq__item
+            button.faq__question Do I need prior experience to join?
+            .faq__answer
+              p No prior experience is required! We welcome students at all skill levels. Whether you're a complete beginner or an experienced coder, we have activities and projects suitable for you.
+
+          .faq__item
+            button.faq__question How often does the club meet?
+            .faq__answer
+              p We hold regular bi-weekly meetings, with additional workshops and events scheduled throughout the semester. The schedule is flexible to accommodate members' academic commitments.
+
+          .faq__item
+            button.faq__question Can I join if I'm not a computer engineering student?
+            .faq__answer
+              p Absolutely! While we're based in the Computer Engineering department, we welcome students from all majors who are interested in technology and innovation.
+
+  section.cta
+    .container
+      .cta__content
+        h2.cta__title Ready to Start Your Tech Journey?
+        p.cta__text Join CEC CLUB today and become part of a vibrant community of innovators and problem solvers.
+        a.btn.btn--primary(href="#join") Join Now
+  script.
+    // Simple page routing to show/hide sections based on URL
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      if (faqQuestions) {
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+            question.classList.toggle('active');
+            const answer = question.nextElementSibling;
+            answer.classList.toggle('active');
+          });
+        });
+      }
+
+
+      const joinForm = document.querySelector('.join-form .form');
+      if (joinForm) {
+        joinForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          alert('Thank you for your application! We will review it and get back to you soon.');
+          this.reset();
+        });
+      }
+    });

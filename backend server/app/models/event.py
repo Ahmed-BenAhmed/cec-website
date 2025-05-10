@@ -11,8 +11,8 @@ class EventBase(BaseModel):
     start_time: datetime
     end_time: datetime
     location: str
-    event_link: Optional[HttpUrl] = None
-    cover_image_url: Optional[HttpUrl] = None
+    event_link: Optional[str] = None
+    cover_image_url: Optional[str] = None
     registration_required: bool = False
     max_attendees: Optional[int] = None
 
@@ -26,8 +26,8 @@ class EventUpdate(BaseModel):
     start_time: Optional[datetime] = None
     end_time: Optional[datetime] = None
     location: Optional[str] = None
-    event_link: Optional[HttpUrl] = None
-    cover_image_url: Optional[HttpUrl] = None
+    event_link: Optional[str] = None
+    cover_image_url: Optional[str] = None
     registration_required: Optional[bool] = None
     max_attendees: Optional[int] = None
     status: Optional[str] = None

@@ -16,6 +16,7 @@ url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
 supabase = create_client(url, key)
 
+
 def init_members(count=10):
     """Initialize members table with sample data"""
     print("Initializing members...")
@@ -120,9 +121,10 @@ def init_blog_posts(count=8):
         supabase.table("blog_posts").insert(post_data).execute()
 
 if __name__ == "__main__":
+    """Main function to initialize database"""
     print("Starting database initialization...")
-    init_members(15)
-    init_projects(5)
-    init_events(6)
-    init_blog_posts(8)
+    # init_members(15)
+    # init_projects(5)
+    # init_events(6)
+    # init_blog_posts(8)
     print("Database initialization complete!")
