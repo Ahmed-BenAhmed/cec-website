@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./frontend/dist/js",
+    "outDir": "./frontend/dist",
     "rootDir": "./frontend/src",
     "sourceMap": true
   },

@@ -2,13 +2,7 @@
 
 // Base icon style
 [class^="icon-"] {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-    vertical-align: -0.125em;
+  font-style: normal;
   }
   
   // Code icon
@@ -41,7 +35,12 @@
       font-family: "Font Awesome 5 Brands";
     }
   }
-  
+  .icon-instagram {
+    &::before {
+      content: "\f16d"; // Font Awesome instagram icon unicode
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
   .icon-discord {
     &::before {
       content: "\f392"; // Font Awesome discord icon unicode
