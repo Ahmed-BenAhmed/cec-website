@@ -365,9 +365,65 @@
     color: $color-text-muted;
     font-size: $font-size-medium;
     line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba($color-darker, 0.6);
+    color: $color-text;
+    font-size: $font-size-medium;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    &--linkedin {
+      background-color: #0077B5;
+
+      &:hover {
+        background-color: color.adjust(#0077B5, $lightness: -10%);
+      }
+    }
+
+    &--instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+
+      &:hover {
+        background: linear-gradient(45deg, color.adjust(#f09433, $lightness: -10%) 0%, color.adjust(#e6683c, $lightness: -10%) 25%, color.adjust(#dc2743, $lightness: -10%), color.adjust(#cc2366, $lightness: -10%) 75%, color.adjust(#bc1888, $lightness: -10%) 100%);
+      }
+    }
+
+    &--twitter {
+      background-color: #1DA1F2;
+
+      &:hover {
+        background-color: color.adjust(#1DA1F2, $lightness: -10%);
+      }
+    }
+    &--github {
+      background-color: #333;
+
+      &:hover {
+        background-color: color.adjust(#333, $lightness: -10%);
+      }
+    }
   }
 }
-
 // Social media links at the bottom of the team section
 .team-social {
   display: flex;

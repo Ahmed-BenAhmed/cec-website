@@ -7,9 +7,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist/js",
+    "outDir": "./frontend/dist/js",
+    "rootDir": "./frontend/src",
     "sourceMap": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["frontend/src/**/*.ts"],
+  "exclude": [
+    "frontend/node_modules"
+  ]
 }

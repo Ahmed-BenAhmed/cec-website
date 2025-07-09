@@ -5,8 +5,8 @@
 
 import {addProjectStyles, ProjectsManager} from './project-card.js';
 import { EventsManager, addEventStyles } from './event-card.js';
-
-const backend_endpoint = 'http://localhost:8002';
+import {renderCards} from "./team-card.js"
+const backend_endpoint = 'http://162.243.168.223/';
 
 
 // Example data (in a real application, this would come from an API or database)
@@ -43,6 +43,8 @@ const sampleEvents = [
 
 // Initialize cards when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+
+  renderCards();
   // Add styles to the page
   addEventStyles();
 
