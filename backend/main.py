@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from supabase import create_client, Client
 import os
 from dotenv import load_dotenv
-from .routers import auth, members, projects, events, blog
+from app.routers import auth, members, projects, events, blog
 load_dotenv()
 
 app = FastAPI(

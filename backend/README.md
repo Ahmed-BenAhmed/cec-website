@@ -14,6 +14,8 @@ httpx==0.26.0
 
 pip install passlib httpx python-jose[cryptography] python-multipart pydantic[email] Faker
 pip install --upgrade supabase gotrue
+pip install passlib httpx python-jose[cryptography]
+pip install pydantic[email]
 
 ### `README.md`
 ```markdown
